@@ -8,7 +8,6 @@ This repo contains a list of short exercises to practice implementing a specific
 	- [Factory Method](https://github.com/Thijs5/book-club-design-patterns/tree/master/creational/factory-method)
 	- [Prototype](https://github.com/Thijs5/book-club-design-patterns/tree/master/creational/prototype)
 	- [Singleton](https://github.com/Thijs5/book-club-design-patterns/tree/master/creational/singleton)
-
 - [Structural Patterns](https://github.com/Thijs5/book-club-design-patterns/tree/master/structural/)
 	- [Adapter](https://github.com/Thijs5/book-club-design-patterns/tree/master/structural/adapter)
 	- [Bridge](https://github.com/Thijs5/book-club-design-patterns/tree/master/structural/bridge)
@@ -17,7 +16,6 @@ This repo contains a list of short exercises to practice implementing a specific
 	- [Facade](https://github.com/Thijs5/book-club-design-patterns/tree/master/structural/facade)
 	- [Flyweight](https://github.com/Thijs5/book-club-design-patterns/tree/master/structural/flyweight)
 	- [Proxy](https://github.com/Thijs5/book-club-design-patterns/tree/master/structural/proxy)
-
 - [Behavioral Patterns](https://github.com/Thijs5/book-club-design-patterns/tree/master/behavioral)
 	- [Chain of Responsibility](https://github.com/Thijs5/book-club-design-patterns/tree/master/behavioral/chain-of-responsibility)
 	- [Command](https://github.com/Thijs5/book-club-design-patterns/tree/master/behavioral/command)
