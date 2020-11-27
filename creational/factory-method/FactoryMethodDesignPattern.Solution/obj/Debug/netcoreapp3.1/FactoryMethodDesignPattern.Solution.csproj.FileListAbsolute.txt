@@ -1,0 +1,11 @@
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\bin\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.exe
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\bin\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.deps.json
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\bin\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.runtimeconfig.json
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\bin\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.runtimeconfig.dev.json
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\bin\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.dll
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\bin\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.pdb
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\obj\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.csprojAssemblyReference.cache
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\obj\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.AssemblyInfoInputs.cache
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\obj\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.AssemblyInfo.cs
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\obj\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.dll
+C:\Users\royp\source\repos\FactoryMethodDesignPattern.Solution\obj\Debug\netcoreapp3.1\FactoryMethodDesignPattern.Solution.pdb
