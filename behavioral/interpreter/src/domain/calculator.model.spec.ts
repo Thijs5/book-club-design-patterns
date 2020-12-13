@@ -6,22 +6,24 @@ describe('Calculator.parse', () => {
   const parse = calculator.parse.bind(calculator);
 
   describe('basic operations', () => {
-    it ('+', () => { expect(parse('50 + 5')).toBe(55); });
-    it ('-', () => { expect(parse('55 - 5')).toBe(50); });
-    it ('*', () => { expect(parse('10 * 5')).toBe(50); });
-    it ('/', () => { expect(parse('50 / 5')).toBe(10); });
+    it ('3 + 3', () => { expect(parse('3 + 3')).toBe(6); });
+    it ('3 - 3', () => { expect(parse('3 - 3')).toBe(0); });
+    it ('3 * 3', () => { expect(parse('3 * 3')).toBe(9); });
+    it ('3 / 3', () => { expect(parse('3 / 3')).toBe(1); });
   });
 
-  describe('combined operations +', () => {
-    it ('++', () => { expect(parse('50 + 5 + 5')).toBe(60); });
-    it ('+-', () => { expect(parse('55 + 5 - 5')).toBe(55); });
-    it ('+*', () => { expect(parse('10 + 5 * 5')).toBe(35); });
-    it ('+/', () => { expect(parse('50 + 5 / 5')).toBe(51); });
+  describe('combined operations', () => {
+    it ('3 + 3 + 3', () => { expect(parse('3 + 3 + 3')).toBe(9); });
+    it ('3 + 3 - 3', () => { expect(parse('3 + 3 - 3')).toBe(3); });
+    it ('3 + 3 * 3', () => { expect(parse('3 + 3 * 3')).toBe(12); });
+    it ('3 + 3 / 3', () => { expect(parse('3 + 3 / 3')).toBe(4); });
 
-    it ('-+', () => { expect(parse('50 - 5 + 5')).toBe(50); });
-    it ('--', () => { expect(parse('55 - 5 - 5')).toBe(45); });
-    it ('-*', () => { expect(parse('10 - 5 * 5')).toBe(-15); });
-    it ('-/', () => { expect(parse('50 - 5 / 5')).toBe(49); });
+    it ('3 - 3 + 3', () => { expect(parse('3 - 3 + 3')).toBe(3); });
+    it ('3 - 3 - 3', () => { expect(parse('3 - 3 - 3')).toBe(-3); });
+    it ('3 - 3 * 3', () => { expect(parse('3 - 3 * 3')).toBe(-6); });
+    it ('3 - 3 / 3', () => { expect(parse('3 - 3 / 3')).toBe(2); });
+
+    it ('12 / 4 + 5 * 3 - 6', () => { expect(parse('12 / 4 + 5 * 3 - 6')).toBe(12); });
   });
 
 });
