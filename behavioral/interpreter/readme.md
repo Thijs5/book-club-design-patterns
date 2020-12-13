@@ -11,6 +11,5 @@ We're roleplaying as the Windows calculator developing team. When writing tests 
 
 The goal of the exercise is to refactor the `calculator`-class using the interpreter pattern so an expression, e.g. `50 - 5 * 5` calculates to `25` and not `225`. There are tests included for this class. To run the tests, run `ng test`.
 
-![alt text][example]
+![example](https://raw.githubusercontent.com/Thijs5/book-club-design-patterns/master/behavioral/interpreter/screenshot_interpreter.png)
 
-[example]: ./screenshot_interpreter.png
