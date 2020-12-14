@@ -5,11 +5,13 @@ import { Division, Minus, Operation, Product, Sum } from './operation.model';
 export class Calculator {
   #treeBuilder = new TreeBuilder();
 
+  public tree?: Expression;
+
   constructor() { }
 
   parse(expression: string): number {
-    const result = this.#treeBuilder.createExpression(expression);
-    return result.getValue();
+    this.tree = this.#treeBuilder.createExpression(expression);
+    return this.tree.getValue();
   }
 }
 
