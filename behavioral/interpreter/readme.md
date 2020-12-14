@@ -28,7 +28,7 @@ Consider the equation `12 / 4 + 5 * 3 - 6`. The naive calculator will calculate 
 - `24` - 6
 - `18`
 
-### Correct
+#### Correct
 - 12 / 4 + 5 * 3 - 6
 - `3` + 5 * 3 - 6
 - 3 + `15` - 6
