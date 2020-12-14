@@ -11,7 +11,7 @@ Run `ng test` to run the tests. Since the calculator doesn't yet calculates corr
 ## Exercise
 We're roleplaying as the Windows calculator developing team. When writing tests we discovered our calculator doesn't take in account the order of calculation.
 
-![calculator](https://raw.githubusercontent.com/Thijs5/book-club-design-patterns/master/behavioral/interpreter/assets/calculator.png)
+![calculator](https://raw.githubusercontent.com/Thijs5/book-club-design-patterns/master/behavioral/interpreter/src/assets/calculator.png)
 
 The goal of the exercise is to refactor the `calculator`-class using the interpreter pattern. By using an interpreter pattern our calculator should adhire to the mathical order of execution rules. As a reminder:
 
@@ -84,5 +84,5 @@ export class Sum extends Operation {
 
 The most diffucult part of this exercises is to construct a binary tree of the expression. For the example give, the tree should like the tree below. Not that the more priority an operator has, the lower in the tree it should be. 
 
-![tree](https://raw.githubusercontent.com/Thijs5/book-club-design-patterns/master/behavioral/interpreter/assets/binary-tree.png)
+![tree](https://raw.githubusercontent.com/Thijs5/book-club-design-patterns/master/behavioral/interpreter/src/assets/binary-tree.png)
 
