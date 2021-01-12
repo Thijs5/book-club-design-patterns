@@ -15,11 +15,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.bitcoin = new BitCoin(10);
     const frank = new Person('Frank');
+    this.bitcoin.attach(frank);
     const john = new Person('John');
+    this.bitcoin.attach(john);
     const charlie = new Person('Charlie');
-
-
-
+    this.bitcoin.attach(charlie);
 
     this.persons.push(frank);
     this.persons.push(john);

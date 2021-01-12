@@ -12,6 +12,17 @@ export class Person implements IObserver {
     this.buyInPrice = Math.floor(Math.random() * 50);
   }
 
+  update(cryptoCurrency: CryptoCurrency): void {
+    this.profit = cryptoCurrency.price - this.buyInPrice;
+
+    if (this.profit >= 0) {
+      this.happiness = Happiness.Happy;
+    }
+    else if (this.profit < 0) {
+      this.happiness = Happiness.Sad;
+    }
+  }
+
   get isHappy(): boolean {
     return this.happiness === Happiness.Happy;
   }
