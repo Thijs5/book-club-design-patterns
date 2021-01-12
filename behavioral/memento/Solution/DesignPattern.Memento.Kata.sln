@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.Memento.Kata.BlazorApp", "DesignPattern.Memento.Kata.BlazorApp\DesignPattern.Memento.Kata.BlazorApp.csproj", "{2E64C9C6-134F-4440-896A-2AEB3716A7DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E64C9C6-134F-4440-896A-2AEB3716A7DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E64C9C6-134F-4440-896A-2AEB3716A7DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E64C9C6-134F-4440-896A-2AEB3716A7DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E64C9C6-134F-4440-896A-2AEB3716A7DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {947A6AD2-F415-4933-95B5-AC7FE8F7BDB2}
+	EndGlobalSection
+EndGlobal

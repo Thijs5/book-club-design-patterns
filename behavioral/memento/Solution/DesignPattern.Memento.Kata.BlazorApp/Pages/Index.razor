@@ -1,0 +1,141 @@
+﻿@page "/"
+@using DesignPattern.Memento.Kata.BlazorApp.Domain
+@using DesignPattern.Memento.Kata.BlazorApp.Core
+
+<div class="row">
+    <div class="col-6">
+        <h6>Theme</h6>
+        <div class="btn-group-vertical" role="group">
+            @foreach (var theme in themes)
+            {
+                <button type="button" class="btn btn-secondary" @onclick="@(() => ThemeSelection(theme))">@theme</button>
+            }
+        </div>
+    </div>
+    <div class="col-6">
+        <h6>Items</h6>
+        @foreach (var asset in assets)
+        {
+            <div>
+                <input type="radio" name="Type" id="@(asset.Key + "asset")" value="@asset.Key" @onchange="@(() => AssetSelection(asset.Value))" checked=@(selectedAsset.Equals(asset.Value, StringComparison.OrdinalIgnoreCase)) />
+                <label for="@(asset.Key + "asset")">@asset.Key</label>
+            </div>
+        }
+    </div>
+</div>
+
+<hr/>
+
+<div class="row">
+    <div class="col-6">
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <svg width="600" height="600" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <defs>
+                <pattern id="forrest1" patternUnits="userSpaceOnUse" width="10" height="10">
+                    <image xlink:href="images/sprites/tileGrass1.png" x="0" y="0" width="10" height="10" />
+                </pattern>
+                <pattern id="forrest2" patternUnits="userSpaceOnUse" width="10" height="10">
+                    <image xlink:href="images/sprites/tileGrass2.png" x="0" y="0" width="10" height="10" />
+                </pattern>
+                <pattern id="desert1" patternUnits="userSpaceOnUse" width="10" height="10">
+                    <image xlink:href="images/sprites/tileSand1.png" x="0" y="0" width="10" height="10" />
+                </pattern>
+                <pattern id="desert2" patternUnits="userSpaceOnUse" width="10" height="10">
+                    <image xlink:href="images/sprites/tileSand2.png" x="0" y="0" width="10" height="10" />
+                </pattern>
+            </defs>
+            <g stroke-width=".2">
+                @foreach (var tile in mapLayout.Tiles)
+                {
+                    <g @onclick="@(() => ApplySelectedAsset(tile))">
+                        <rect x="@(tile.X * 10)" y="@(tile.Y * 10)" width="10" fill="url(#@mapLayout.Theme.ToLower())" stroke="#858585" height="10"></rect>
+                        @if (!string.IsNullOrEmpty(tile.Asset))
+                        {
+                            <image class="@(tile.Y >= 5 ? "rotate-180" : "")" href="@("images/sprites/" + tile.Asset + ".png")" x="@((tile.X * 10) + 2)" y="@((tile.Y * 10) + 2)" width="6" height="6" />
+                        }
+                    </g>
+                }
+            </g>
+        </svg>
+    </div>
+
+    <div class="col-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Backup</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var snapshot in mapCaretaker.GetHistory())
+                {
+                    <tr>
+                        <td>@snapshot</td>
+                        <td><button class="btn btn-primary" @onclick="@(() => RestoreSnapshot(snapshot))">Restore</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<hr />
+
+<div>
+    <img src="images/Memento.png" class="img-fluid" alt="Responsive image" />
+</div>
+
+@code {
+    private string[] themes = new[] {"Forrest1", "Forrest2", "Desert1", "Desert2" };
+    private Dictionary<string, string> assets = new Dictionary<string, string>();
+    private string selectedAsset = "tank_red";
+
+    private MapLayout mapLayout;
+    private MapCaretaker mapCaretaker;
+
+    protected override async Task OnInitializedAsync()
+    {
+        assets.Add("Red Tank", "tank_red");
+        assets.Add("Blue Tank", "tank_blue");
+        assets.Add("Crate", "crateWood");
+        assets.Add("Green Tree", "treeGreen_large");
+        assets.Add("Brown Tree", "treeBrown_large");
+        assets.Add("Oil spill", "oilSpill_large");
+        var tiles = new Tile[100];
+        for (var row = 0; row < 10; row++)
+        {
+            for (var col = 0; col < 10; col++)
+            {
+                tiles[(10 * row) + col] = new Tile(row, col);
+            }
+        }
+        mapLayout = new MapLayout(tiles, "Forrest1");
+        mapCaretaker = new MapCaretaker(mapLayout);
+    }
+
+    void AssetSelection(string selection)
+    {
+        selectedAsset = selection;
+    }
+
+    private void RestoreSnapshot(string snapshotName)
+    {
+        mapCaretaker.Restore(snapshotName); 
+        // Due to svg rendering in blazor, the tiles aren't updated :(
+        StateHasChanged();
+    }
+
+    void ThemeSelection(string selection)
+    {
+        mapLayout.Theme = selection;
+        mapCaretaker.Backup();
+    }
+
+    void ApplySelectedAsset(Tile tile)
+    {
+        var index = (10 * tile.X) + tile.Y;
+        mapLayout.Tiles[index].Asset = selectedAsset;
+        mapCaretaker.Backup();
+    }
+}
