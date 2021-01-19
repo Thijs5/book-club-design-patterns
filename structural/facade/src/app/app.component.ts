@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { Chef } from 'src/domain/chef.model';
-import { Microwave } from 'src/domain/microwave.model';
+import { Subject } from 'rxjs';
+import { Kitchen } from 'src/domain/kitchen.model';
 import { Waiter } from 'src/domain/waiter.model';
 import { LogService, Message } from './log.service';
 
@@ -16,27 +15,21 @@ export class AppComponent implements OnInit, OnDestroy {
   events: Message[] = [];
   #loggerSubscription: Subject<Message>;
 
-  #chef: Chef;
-  #microwave: Microwave
   #waiter: Waiter;
+  #kitchen: Kitchen;
 
   constructor(private logger: LogService) {
     this.#loggerSubscription = logger.message;
-    this.#chef = new Chef(logger);
     this.#waiter = new Waiter(logger);
-    this.#microwave = new Microwave(logger);
+    this.#kitchen = new Kitchen(logger);
   }
 
   order() {
     this.#waiter.writeOrder();
     this.#waiter.sendToKitchen();
-    this.#chef.receiveOrder();
-    this.#microwave.open();
-    this.#microwave.setTimer();
-    this.#microwave.close();
-    this.#chef.callWaiter();
+    this.#kitchen.processOrder();
     this.#waiter.serveCustomer();
-    this.#chef.washDishes();
+    this.#kitchen.washDishes();
   }
 
   ngOnInit(): void {
