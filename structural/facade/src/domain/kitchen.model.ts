@@ -6,7 +6,7 @@ export class Kitchen {
     #chef: Chef;
     #microwave: Microwave;
 
-    constructor(private logger: LogService) {
+    constructor(logger: LogService) {
         this.#chef = new Chef(logger);
         this.#microwave = new Microwave(logger);
     }

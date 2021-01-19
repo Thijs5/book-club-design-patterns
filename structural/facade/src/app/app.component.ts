@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Kitchen } from 'src/domain/kitchen.model';
-import { Waiter } from 'src/domain/waiter.model';
+import { Restaurant } from 'src/domain/restaurant.model';
 import { LogService, Message } from './log.service';
 
 @Component({
@@ -15,21 +14,15 @@ export class AppComponent implements OnInit, OnDestroy {
   events: Message[] = [];
   #loggerSubscription: Subject<Message>;
 
-  #waiter: Waiter;
-  #kitchen: Kitchen;
+  #restaurant: Restaurant;
 
   constructor(private logger: LogService) {
     this.#loggerSubscription = logger.message;
-    this.#waiter = new Waiter(logger);
-    this.#kitchen = new Kitchen(logger);
+    this.#restaurant = new Restaurant(logger);
   }
 
   order() {
-    this.#waiter.writeOrder();
-    this.#waiter.sendToKitchen();
-    this.#kitchen.processOrder();
-    this.#waiter.serveCustomer();
-    this.#kitchen.washDishes();
+    this.#restaurant.order();
   }
 
   ngOnInit(): void {
