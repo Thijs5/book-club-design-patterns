@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div class="image">
+    <img src="assets/city-wok.jpg"/>
+    <button (click)="order()">Order</button>
+  </div>
+  <div class="console">
+    <h1>Console</h1>
+    <pre *ngFor="let message of events" [class]="message.source">{{message.toString() + '\n'}}</pre>
+  </div>
+</div>
