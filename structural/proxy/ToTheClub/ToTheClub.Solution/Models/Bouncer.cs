@@ -11,7 +11,8 @@ namespace ToTheClub.Solution.Models
         {
             if (person.Age >= MinimumRequiredAge)
             {
-                _doors = new EntranceDoors();
+                _doors ??= new EntranceDoors();
+
                 _doors.HandleAccess(person);
             }
             else
