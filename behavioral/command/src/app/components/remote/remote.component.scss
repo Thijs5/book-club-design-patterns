@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.rc {
+  background-color: #111;
+  color: white;
+  max-width: 400px;
+  margin: auto;
+  padding: 50px 20px 80px;
+  border-radius: 10px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    background-color: Purple;
+    opacity: 0.5;
+    top: 0;
+    left: calc(50% - 75px);
+    border-radius: 0 0 5px 5px;
+  }
+
+  &:after {
+    content: "Netflix";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 0.5;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 1;
+    font-style: italic;
+    font-family: monospace;
+  }
+}
+
+.rc__part {
+  display: grid;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.rc__part--alpha {
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+
+  & + & {
+    margin-top: 40px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+}
+
+.rc__part--beta {
+  grid-template-columns: 20px repeat(3, 1fr) 20px;
+  grid-template-rows: 20px repeat(3, 1fr) 20px;
+  grid-gap: 10px;
+  margin-top: 20px;
+  align-items: stretch;
+
+  .rc__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-child(1) {
+      grid-row: 1;
+      grid-column: 1;
+      font-family: serif;
+    }
+    &:nth-child(2) {
+      grid-row: 1;
+      grid-column: 5;
+    }
+    &:nth-child(3) {
+      grid-row: 2;
+      grid-column: 3;
+    }
+    &:nth-child(4) {
+      grid-row: 3;
+      grid-column: 2;
+    }
+    &:nth-child(5) {
+      grid-row: 3;
+      grid-column: 3;
+    }
+    &:nth-child(6) {
+      grid-row: 3;
+      grid-column: 4;
+    }
+    &:nth-child(7) {
+      grid-row: 4;
+      grid-column: 3;
+    }
+    &:nth-child(8) {
+      grid-row: 5;
+      grid-column: 1;
+    }
+    &:nth-child(9) {
+      grid-row: 5;
+      grid-column: 5;
+    }
+  }
+}
+
+.rc__part--gamma {
+  grid-template-areas: "a b d"
+                       "a c d";
+  align-items: stretch;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+
+  .rc__button {
+    &:nth-child(1) {
+      grid-area: a;
+      grid-row: span 2;
+    }
+    &:nth-child(2) {
+      grid-area: b;
+    }
+    &:nth-child(3) {
+      grid-area: c;
+    }
+    &:nth-child(4) {
+      grid-area: d;
+    }
+  }
+}
+
+.rc__part--omega {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+
+.rc__button {
+  text-align: center;
+  background-color: lighten(black, 15%);
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 1px 2px 0 lighten(black, 50%);
+  cursor: pointer;
+  display: block;
+
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(1px);
+  }
+}
+
+.rc__button--color {
+  padding: 2px;
+}
+
+.rc__button--round {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rc__button--tiny {
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  font-size: 10px;
+}
+
+.rc__button--red {
+  background-color: #E50914;
+  box-shadow: 0 1px 2px 0 darken(Tomato, 15%);
+}
+
+.rc__button--green {
+  background-color: SeaGreen;
+  box-shadow: 0 1px 2px 0 darken(SeaGreen, 15%);
+}
+
+.rc__button--yellow {
+  background-color: Gold;
+  box-shadow: 0 1px 2px 0 darken(Gold, 15%);
+}
+
+.rc__button--blue {
+  background-color: DodgerBlue;
+  box-shadow: 0 1px 2px 0 darken(DodgerBlue, 15%);
+}
+
+.rc__button-text {
+  display: block;
+  transform: translateY(calc(-100% - 10px));
+}
+
+.rc__button--column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.volume {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 0;
+      width: 0;
+      height: 0;
+      border-right: 10px solid white;
+      border-bottom: 5px solid white;
+      border-top: 5px solid transparent;
+      border-left: 10px solid transparent;
+    }
+  }
+}
+
+.power {
+  font-size: 40px;
+  line-height: 1;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: calc(50% - 2px);
+    top: 8px;
+    width: 2px;
+    border: 1px solid Tomato;
+    height: 10px;
+    background-color: white;
+  }
+}

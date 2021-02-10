@@ -1,0 +1,24 @@
+.to-the-right {
+  position: fixed;
+  height: 100vh;
+  z-index: 900;
+  right: 0;
+}
+
+.remote-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.remote {
+  margin-right: 2rem;
+  filter: drop-shadow(0 0 1rem #E50914);
+}
+
+.tv {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}

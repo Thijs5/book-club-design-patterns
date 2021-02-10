@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <app-television class="tv" [television]="television" (onPress)="buttonPress($event)"></app-television>
+  <aside class="to-the-right" *ngIf="withRemote">
+    <div class="remote-wrapper">
+      <app-remote class="remote" [television]="television" (onPress)="buttonPress($event)"></app-remote>
+    </div>
+  </aside>
+</div>

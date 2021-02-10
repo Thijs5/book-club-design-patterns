@@ -1,0 +1,56 @@
+<div class="rc">
+  <div class="rc__part rc__part--alpha">
+      <div class="rc__button rc__button--round rc__button--red" (click)="press(ButtonCode.Power)">
+        <span class="power">○</span>
+      </div>
+      <div class="rc__button" (click)="press(ButtonCode.Tools)">Tools</div>
+      <div class="rc__button" (click)="press(ButtonCode.TV)">TV</div>
+      <div class="rc__button" (click)="press(ButtonCode.AV)">AV</div>
+  </div>
+  <div class="rc__part rc__part--beta">
+      <div class="rc__button rc__button--round rc__button--tiny" (click)="press(ButtonCode.Info)">i</div>
+      <div class="rc__button rc__button--round rc__button--tiny" (click)="press(ButtonCode.Close)">X</div>
+      <div class="rc__button" (click)="press(ButtonCode.Up)">▲</div>
+      <div class="rc__button" (click)="press(ButtonCode.Left)">◄</div>
+      <div class="rc__button" (click)="press(ButtonCode.Ok)">OK</div>
+      <div class="rc__button" (click)="press(ButtonCode.Right)">►</div>
+      <div class="rc__button" (click)="press(ButtonCode.Down)">▼</div>
+      <div class="rc__button rc__button--round rc__button--tiny">
+          <div class="rc__button-text" (click)="press(ButtonCode.Option)">OPTION</div>
+      </div>
+      <div class="rc__button rc__button--round rc__button--tiny" (click)="press(ButtonCode.Undo)">↔</div>
+  </div>
+  <div class="rc__part rc__part--alpha">
+      <div class="rc__button rc__button--red rc__button--color" (click)="press(ButtonCode.Red)"> <br /></div>
+      <div class="rc__button rc__button--green rc__button--color" (click)="press(ButtonCode.Green)"> <br /></div>
+      <div class="rc__button rc__button--yellow rc__button--color" (click)="press(ButtonCode.Yellow)"> <br /></div>
+      <div class="rc__button rc__button--blue rc__button--color" (click)="press(ButtonCode.Blue)"> <br /></div>
+  </div>
+  <div class="rc__part rc__part--gamma">
+      <div class="rc__button rc__button--column">
+        <span (click)="press(ButtonCode.VolumeUp)">+</span>
+        <span class="volume"></span>
+        <span (click)="press(ButtonCode.VolumeDown)">—</span>
+      </div>
+      <div class="rc__button" (click)="press(ButtonCode.Aspect)">ASPECT</div>
+      <div class="rc__button" (click)="press(ButtonCode.Mute)">MUTE</div>
+      <div class="rc__button rc__button--column">
+        <span (click)="press(ButtonCode.ProgUp)">▲</span>
+        <span (click)="press(ButtonCode.ProgDown)">▼</span>
+      </div>
+  </div>
+  <div class="rc__part rc__part--omega">
+      <div class="rc__button" (click)="press(ButtonCode.Chan1)">1</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan2)">2</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan3)">3</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan4)">4</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan5)">5</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan6)">6</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan7)">7</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan8)">8</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan9)">9</div>
+      <div class="rc__button">←</div>
+      <div class="rc__button" (click)="press(ButtonCode.Chan0)">0</div>
+      <div class="rc__button">-/--</div>
+  </div>
+</div>
